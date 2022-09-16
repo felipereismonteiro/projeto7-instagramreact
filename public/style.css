@@ -1,491 +1,402 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@100&display=swap');
+* {
+  box-sizing: border-box;
+}
 
 body {
-    background-color: #FFFFFF;
-    font-family: 'Roboto', sans-serif
+  background-color: #FAFAFA;
+  margin: 54px 0 0;
+  font-family: 'Roboto', sans-serif;
+  color: #262626;
+  font-weight: 400;
+  font-size: 14px;
 }
 
-/*      header      */
-
-header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    background-color: #FFFFFF;
-    position: fixed;
-    z-index: 5;
-    border-bottom: 1px solid #dbdbdb;
+.navbar {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  height: 54px;
+  border-bottom: 1px solid #DBDBDB;
+  font-size: 22px;
+  background-color: #FFF;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
 }
 
-p {
-    font-size: 14px;
-    font-weight: 500;
+.navbar ion-icon, .navbar img {
+  cursor: pointer;
 }
 
-.largura {
-    width: 100%;
-    height: 54px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+.navbar .container {
+  width: 100%;
+  max-width: 935px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
 }
 
-ion-icon {
-    font-size: 20px;
+.navbar .container > * {
+  display: flex;
+  align-items: center;
+  height: 100%;
 }
 
-.linha {
-    width: 1px;
-    height: 22px;
-    background-color:#DBDBDB;
-    margin: 0 5px 0 5px;  
+.navbar .logo img {
+  position: relative;
+  top: 3px;
 }
 
-.logo {
-    display: flex;
-    align-items: center;
+.navbar .logo .separador {
+  width: 1px;
+  height: 22px;
+  background-color: #DBDBDB;
+  margin: 0 10px;
 }
 
-.logo img {
-    margin-top: 6px;
+.navbar .pesquisa input {
+  width: 215px;
+  height: 28px;
+  border-radius: 3px;
+  background-color: #FAFAFA;
+  border: 1px solid #DBDBDB;
+  color: #979797;
+  text-align: center;
 }
 
-input {
-    background-color: #FAFAFA;
-    text-align: center;
-    border: 1px solid #DBDBDB;
-    border-radius: 4px;
-    padding: 2px;
-    width: 215px;
-    height: 28px;
+.navbar .icones ion-icon {
+  margin: 0 5px;
 }
 
-/*      nav     */
-
-.alinhamento-principal {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    height: auto;
+.navbar .icones-mobile {
+  display: none;
 }
 
-.alinhamento-stories {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-top: 50px;
+.corpo {
+  display: flex;
+  justify-content: space-between;
+  width: 935px;
+  margin: 0 auto;
+  margin-top: 88px;
 }
 
-.coluna-posts {
-    width: 614px;
-    height: 500px;
-}
-
-.fixo {
-    position: relative;
-    width: 300px;
-    margin-top: 50px;
+.esquerda {
+  width: 100%;
+  max-width: 614px;
 }
 
 .sidebar {
-    width: 300px;
-    height: 500px;
-    margin: 29px 0 20px 10px;
-    position: fixed;
+  width: 293px;
 }
 
-.alinhamento-sidebar {
-    display: flex;
-    justify-content: flex-end;
+.stories {
+  display: flex;
+  align-items: center;
+  height: 118px;
+  border-radius: 3px;
+  border: 1px solid #DBDBDB;
+  padding: 0 18px;
+  overflow: hidden;
+  position: relative;
 }
 
+.story {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 14px 0;
+  font-size: 12px;
+  cursor: pointer;
+  margin-right: 10px;
+}
 
-/*      posts       */
+.story .imagem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 66px;
+  width: 66px;
+  background-image: url('../assets/img/story-circle.svg');
+  
+}
+
+.story .imagem img {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+}
+
+.story .usuario {
+  width: 66px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+  height: 14px;
+}
+
+.stories .setinha {
+  position: absolute;
+  right: 10px;
+  top: 45px;
+  height: 32px;
+  width: 32px;
+  color: #FFF;
+  font-size: 28px;
+  cursor: pointer;
+}
 
 .post {
-    margin: 10px 0 50px 0;
+  border-radius: 3px;
+  border: 1px solid #DBDBDB;
+  display: flex;
+  flex-direction: column;
+  margin-top: 18px;
 }
 
-.postCima {
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-    background-color: #FFFFFF;
-    border-top-left-radius: 3px;
-    border-top-right-radius: 3px;
-    border: 1px solid #dbdbdb;
+.post .topo {
+  display: flex;
+  justify-content: space-between;
+  padding: 13px 16px;
+  font-size: 14px;
+  font-weight: 500;
 }
 
-.postCima img{
-    width: 32px;
-    margin: 10px;
-    border-radius: 50%;
+.post .topo .usuario, .post .topo .acoes {
+  display: flex;
+  align-items: center;
 }
 
-.imgPost {
-    display: flex;
-    align-items: center;
+.post .topo img {
+  width: 32px;
+  height: 32px;
+  margin-right: 10px;
 }
 
-.iconPost {
-    display: flex;
-    float: right;
-    align-items: center;
-    margin: 0 10px 0 0;
+.post .usuario, .post .topo img, .post .fundo img, .post ion-icon, .post strong, .usuario ion-icon, .usuario > img, .conteudo > img {
+  cursor: pointer;
 }
 
-.postImg img {
-    width: 616px;
-    margin-bottom: -3px;
+.post .conteudo img {
+  width: 100%;
 }
 
-.coluna-posts:last-child {
-    margin-bottom: 1910px;
+.post .fundo .acoes {
+  display: flex;
+  justify-content: space-between;
+  padding: 13px 16px;
+  font-size: 24px;
 }
 
-.postBaixo {
-    background-color: #FFFFFF;
-    border-bottom-left-radius: 3px;
-    border-bottom-right-radius: 3px;
-    border: 1px solid #dbdbdb;
+.post .fundo .acoes div:first-child ion-icon {
+  margin-right: 6px;
 }
 
-.textPost {
-    display: flex;
-    align-items: center;
+.post .fundo .curtidas {
+  display: flex;
+  align-items: center;
+  padding: 0 16px 13px;
+  font-weight: 300;
 }
 
-.iconsPost {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 10px 5px 10px;
-    box-sizing: border-box;
+.post .fundo .curtidas img {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
 }
 
-.imgBaixoPost img {
-    width: 20px;
-    border-radius: 50%;
-    margin: 5px 10px 10px 10px;
+.post:last-child {
+  margin-bottom: 18px;
 }
 
-.textBaixoPost p {
-    font-size: 14px;
-    font-weight: normal;
-    margin: 5px 0 10px 0;
-    font-family: 'Montserrat', sans-serif;
-}
-strong {
-    font-weight: bold;
+.sidebar {
+  padding-top: 24px;
+  position: sticky;
+  top: 88px;
 }
 
-/*      sidebar     */
-
-.sideBarTop {
-    display: flex;
-    align-items: center;
-    margin: 10px 0 10px 10px;
+.sidebar > .usuario {
+  display: flex;
+  align-items: center;
 }
 
-.sideBarTop .imgSideBarTop img {
-    border-radius: 50%;
-    width: 56px;
+.sidebar > .usuario img {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
 }
 
-.sideBarTop .textSideBarTop{
-    font-size: 14px;
-    margin: 0 10px 0 10px;
-    line-height: 1.3;
+.sidebar > .usuario .texto {
+  display: flex;
+  flex-direction: column;
+  margin-left: 14px;
+  font-weight: 300;
+  color: #8E8E8E;
 }
 
-.sideBarTop .textSideBarTop p {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 13px;
-    font-weight: lighter;
-    color: darkgrey;
+.sidebar > .usuario .texto strong {
+  font-weight: 500;
+  color: #262626;
 }
 
-.sideBarMiddle {
-    display: flex;
-    height: 290px;
+.sidebar .sugestoes .titulo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0 14px;
 }
 
-.leftSideBarMiddle {
-    height: 100px;
-    width: 50%;
+.sidebar .sugestoes .sugestao {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  height: 31px;
+  margin-bottom: 16px;
 }
 
-.rightSideBarMiddle {
-    height: 100px;
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
+.sidebar .sugestoes .sugestao .usuario {
+  display: flex;
 }
 
-.suggestion {
-    margin: 10px 0 0 10px;
+.sidebar .sugestoes img {
+  width: 32px;
+  height: 32px;
 }
 
-.suggestion p {
-    color: #8E8E8E;
-    font-size: 12px;
+.sidebar .sugestoes .seguir {
+  color: #139EF2;
+  font-weight: 600;
 }
 
-.seeAll {
-    margin: 0 0 0 10px;
+.sidebar .sugestoes .sugestao .usuario .texto {
+  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.seeAll p {
-    font-size: 12px;
-    color: black;
-    margin: 10px 0 0 0;
+.sidebar .sugestoes .sugestao .usuario .texto :last-child {
+  color: #8E8E8E;
+  font-weight: 400;
 }
 
-.follow p {
-    color: #139EF2;
-    font-size: 12px;
-    margin-top: 35px;
+.links, .copyright {
+  font-size: 11px;
+  color: #C7C7C7;
+} 
+
+.links {
+  margin-top: 40px;
+  cursor: pointer;
 }
 
-.profiles {
-    display: flex;
-    flex-direction: column;
+.copyright {
+  margin-top: 18px;
 }
 
-.profile {
-    display: flex;
-    margin-top: 11px;
-    margin-left: 10px;
+.fundo-mobile {
+  display: none;
 }
 
-.textSideBarMiddle {
-    line-height: 1.2;
-    margin: 0 0 0 10px;
+.fundo-mobile ion-icon {
+  cursor: pointer;
 }
 
-.textSideBarMiddle strong {
-    font-size: 14px;
+.logo-mobile, .instagram-mobile {
+  display: none !important;
 }
 
-.textSideBarMiddle  p{
-    font-size: 12px;
-    color: #8E8E8E;
-}
+@media (max-width: 935px) {
+  .sidebar {
+    display: none;
+  }
 
-.profile:first-child {
-    display: flex;
-    margin-top: 28px;
-}
+  .navbar .container {
+    padding: 0 20px;
+  }
 
-.imgSideBarMiddle  img{
-    width: 32px;
-    border-radius: 50%;
-}
-
-.textSideBarBottomTop {
-    width: 100%;
-    color: #9b9b9b;
-    font-size: 11px;
-    margin: 10px 0 0 10px;
-}
-
-.textSideBarBottomTop p {
-    color: #C7C7C7;
-    font-weight: normal;
-    font-size: 12px;
-}
-
-.textSideBarBottomBottom {
-    width: 100%;
-    color: #C7C7C7;
-    margin: 10px 0 0 10px;
-    height: 100px;
-}
-
-.textSideBarBottomBottom p {
-    color: #C7C7C7;
-    font-weight: normal;
-    font-size: 12px;
-}
-
-/*      caixa-stories       */
-
-.caixa-stories {
-    width: 614px;
-    height: 118px;
-    margin: 30px 0 20px 0;
-    text-align: center;
-    border: 1px solid #DBDBDB;
-    background-color: #FFFFFF;
-    z-index: 1;
-    overflow: hidden;
-}
-
-.boxAll {
-    display: flex;
+  .corpo {
     justify-content: center;
-    align-items: center;
-    height: 100%;
-    position: relative;
-    left: 25px;
-    z-index: 0;
+    width: 100%;
+  }
 }
 
-.profileStories {
-    position: relative;
-    margin: 0 15px 0 10px;
-}
+@media (max-width: 614px) {
+  .corpo {
+    margin-top: 0;
+  }
 
-.profileStories img {
-    width: 56px;
-    border-radius: 50%;
-    right: -4.5px;
-    bottom: 12px;
-}
+  .post {
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+    width: 100%;
+  }
 
-.bg img {
-    width: 65px;
-    position: absolute;
-}
+  .post:last-child {
+    margin-bottom: 72px;
+  }
 
-.arrowButton {
-    width: 20px;
-    height: 20px;
-    position: absolute;
-}
+  .stories {
+    background-color: transparent;
+    border: none;
+    width: 100%;
+  }
 
-.arrowButton ion-icon {
-    width: 100px;
-    font-size: 30px;
-    position: relative;
-    left: 220px;    
-    color: white;
-}
+  .post:first-child {
+    margin-top: 0;
+  }
 
-.baixo {
-    height: 100%;
-    position: relative;
+  .navbar .pesquisa {
     display: none;
-}
+  }
 
-.menuInferior {
+  .navbar .icones {
+    display: none;
+  }
+
+  .navbar .icones-mobile {
     display: flex;
+  }
+
+  .fundo-mobile {
+    display: flex;
+    padding: 0 20px;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
-    background-color: #FFFFFF;
-    position: fixed;
-    bottom: 0px;
+    font-size: 24px;
+    background-color: #FFF;
+    border-top: 1px solid #DBDBDB;
     height: 54px;
-    margin-top: 40px;
-    border: 1px solid #dadada;
-}
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+  }
 
-.menuInferior ion-icon {
-    font-size: 17px;
-}
-
-.mobile {
+  .navbar .logo {
     display: none;
+  }
+
+  .logo-mobile, .instagram-mobile {
+    display: flex !important;
+  }
+
+  .instagram-mobile {
+    position: relative;
+    top: 4px;
+  }
 }
 
-.storiesMobile {
-    display: none;
+ion-icon {
+  visibility: visible;
 }
 
-@media (max-width:935px) {
-    .fixo {
-        display: none;
-    }
-    .icons ion-icon {
-        margin: 3px 3px 0 0;
-    }
-    .largura {
-        display: flex;
-        justify-content: space-between;
-    }
-    .mobile {
-        display: none;
-    }
-    .logo {
-        margin-left: 20px;
-    }
-    .icons {
-        margin-right: 20px;
-    }
-    .boxAll {
-        background-color: #FFFFFF;
-        width: 100%;
-    }
+.usuario ion-icon {
+  margin-left: 5px;
 }
 
-@media (max-width:614px) {
-    .icons{
-        margin-right: 2px;
-    }
-    .largura {
-        justify-content: space-around;
-    }
-    .baixo {
-        display: initial;
-    }
-    .largura {
-        display: none;
-    }
-    .mobile {
-        display: initial;
-        display: flex;
-        justify-content: space-between;
-    }
-    .mobile .logo img {
-        width: 103px;
-    }
-    .caixa-stories {
-        display: none;
-    }
-    .storiesMobile {
-        display: initial;
-        width: 614px;
-        margin-top: 4px;
-        margin-bottom: -11px;
-        background-color: #E5E5E5;
-    }
-    .arrowButton {
-        display: none;
-    }
-    .coluna-posts {
-        width: 100%;
-    }
-    .postImg img {
-        width: 100%;
-    }
-    .imgPost {
-        margin-left: 30px;
-    }
-    .iconPost {
-        margin-right: 50px;
-    }
-    .iconsPost {
-        margin-left: 30px;
-        margin-right: 30px;
-    }
-    .textPost {
-        margin-left: 30px;
-    }
-    .boxAll {
-        background-color: #FFFFFF;
-        width: 100%;
-        left: 0;
-        padding: 0 0 0 50px;
-        box-sizing: border-box;
-    }
-    .postCima {
-        width: 100%;
-    }
-}   
