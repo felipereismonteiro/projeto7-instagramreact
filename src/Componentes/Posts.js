@@ -53,7 +53,7 @@ export default function Posts() {
                 <div class="curtidas">
                     <img src={props.likedSrc} />
                     <div class="texto">
-                    Curtido por <strong>{props.people}</strong> e <strong>outras {props.number} pessoas</strong>
+                        Curtido por <strong>{props.people}</strong> e <strong>outras {props.number} pessoas</strong>
                     </div>
                 </div>
             </div>
@@ -61,7 +61,7 @@ export default function Posts() {
 
     return (
         <>
-{post}
+            {post}
         </>
     )
 }
