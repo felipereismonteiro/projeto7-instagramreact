@@ -30,23 +30,19 @@ export default function Posts() {
         
 
         function like() {
-            if (clickedLike === false) {
-                clickedLike = true
+            if (heart === "heart-outline") {
                 setNumber(props.number + 1)
                 setHeart("heart")
             } else{
-                clickedLike = false
                 setNumber(props.number)
                 setHeart("heart-outline")
             }
         }
 
         function save() {
-            if (clickedSaved === false) {
-                clickedSaved = true
+            if (saved === "bookmark-outline") {
                 setSaved("bookmark")
             } else{
-                clickedSaved = false
                 setSaved("bookmark-outline")
             }
             
